@@ -53,6 +53,8 @@ def username_tweets(username, count):
         api = tweepy.API(auth, wait_on_rate_limit=True)
 
         tweets = tweepy.Cursor(api.user_timeline, id=username).items(count)
+        tweets_list = [[username, tweet.created_at,
+                        tweet.id, tweet.text] for tweet in tweets]
         tweets_df = pd.DataFrame(tweets_list, columns=[
                                  'Username', 'Datetime', 'Tweet Id', 'Text'])
         html_tab = tweets_df.to_html()
