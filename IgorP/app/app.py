@@ -1,4 +1,6 @@
-# FLASK APP for Tweeter scrapping, models prediction and rendering results
+### FLASK APP for Tweeter scrapping, models prediction and rendering results ###
+
+# Import Libraries
 import os
 import tweepy
 import time
@@ -13,3 +15,7 @@ from config import consumer_key, consumer_secret, access_token, access_token_sec
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing import text, sequence
 from flask_table import Table, Col
+
+app = Flask(__name__)
+
+#
