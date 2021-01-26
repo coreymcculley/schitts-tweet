@@ -36,10 +36,17 @@
   </body>
 
   <body>
-    <h1 class="col-md-11 text-header text-center" style = "margin-bottom: 3%;">Model Description:</h1>
+    <h1 class="col-md-11 text-header text-center" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 3%;">Model Description:</h1>
 
-    <h2 class="col-md-8 text-header text-left" style = "margin-bottom: 2%; margin-left: 20%;">What is NLP?</h2>
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">“NLP is an area of machine learning which deals with natural – human – 
+    <h2 class="col-md-8 text-header text-left" style = "color: #1DA1F2; margin-bottom: 2%; margin-left: 20%;">What is NLP?</h2>
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
+      This discipline of computer science, artificial intelligence and
+      linguistics is concerned with the creation of computational models that process and understand
+      natural language. These include: making the computer understand the semantic grouping of words
+      (e.g. cat and dog are semantically more similar than cat and spoon), text to speech, language
+      translation and many more.
+    </p>
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">NLP is an area of machine learning which deals with natural – human – 
       languages. This is a broad field, dealing with problems ranging from speech recognition and transcription to 
       text, to translation between different languages, to extracting entities such as people and locations from text, 
       to providing natural language answers to natural language questions. In short, NLP gives machines the ability 
@@ -47,15 +54,15 @@
       perform simple tasks.
     </p>
 
-    <h2 class="col-md-11 text-header text-left" style = "margin-bottom: 2%; margin-left: 20%;">What is LSTM?</h2>
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">Long Short-Term Memory (LSTM) networks are a type of recurrent neural 
+    <h2 class="col-md-11 text-header text-left" style = "color: #1DA1F2; margin-bottom: 2%; margin-left: 20%;">What is LSTM?</h2>
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">Long Short-Term Memory (LSTM) networks are a type of recurrent neural 
       network capable of learning order dependence in sequence prediction problems. This is a behavior required in 
       complex problem domains like machine translation, speech recognition, and more. LSTMs are a complex area of 
       deep learning.
     </p>
 
-    <h2 class="col-md-11 text-header text-left" style = "margin-bottom: 2%; margin-left: 20%;">What is Bidirectional LSTM?</h2>
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">
+    <h2 class="col-md-11 text-header text-left" style = "color: #1DA1F2; margin-bottom: 2%; margin-left: 20%;">What is a Bidirectional LSTM?</h2>
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
       A Bidirectional LSTM, or biLSTM, is a sequence processing model that consists of two LSTMs: one taking the 
       input in a forward direction, and the other in a backwards direction. BiLSTMs effectively increase the 
       amount of information available to the network, improving the context available to the algorithm 
@@ -63,32 +70,40 @@
     </p>
     <img class="col-md-11 text-header text-center"  style = "width: 55%; margin-bottom: 1%; margin-left: 25%;" src="static/css/model_basic.png" alt="bilstm">
     
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">
-      Here is a comparison of the different losses achieved by three models:
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
+      Here is a comparison of the different losses achieved by three models. As you can see, adding the bidirectional
+      approach reduces the number of epochs needed to achieve a near constant loss, and achieves a lower loss / better accuracy. 
     </p>
     <img class="col-md-11 text-header text-center"  style = "width: 55%; margin-bottom: 1%; margin-left: 25%;" src="static/css/example_loss.png" alt="predicitions">
     
-    <h2 class="col-md-11 text-header text-left" style = "margin-bottom: 2%; margin-left: 20%;">Our Models</h2>
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">
+    <h2 class="col-md-11 text-header text-left" style = "color: #1DA1F2; margin-bottom: 2%; margin-left: 20%;">Our Models</h2>
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
       We developed two models to analyze the tweet data. Both were trained on tweet data that was found on Kaggle. 
       The first model looked to identify if a tweet was positive or negative based on the words it observed in the text. Once trained, it outputs a probability score 
-      between 0 and 1 (0 being positive and 1 being negative). Below is an example of how the different types of models label tweets:
+      between 0 and 1 (0 being positive and 1 being negative). The model details are presented below:
     </p>
-    <img class="col-md-11 text-header text-center"  style = "width: 55%; margin-bottom: 1%; margin-left: 25%;" src="static/css/example_predictions.png" alt="predicitions">
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">
+    <img class="col-md-11 text-header text-center"  style = "width: 55%; margin-bottom: 1%; margin-left: 25%;" src="static/css/model1_details.png" alt="predicitions">
+    
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
+        Below are graphs of the loss and accuracy over each epoch:
+    </p>
+    <img class="col-md-11 text-header text-center"  style = "width: 55%; margin-bottom: 1%; margin-left: 25%;" src="static/css/model1_loss.png" alt="predicitions">
+    
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
       As you can see the different levels of model complexity achieve different levels of success, but they all fail 
       with complex language as seen in the last tweet.
     </p>
 
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
       Our second model looked to identify vulgarity in tweets and label them as toxic, severe toxic, obscene, a threat, an insult, or hate speech.
       This was achieved with a similar method as the first model but with different identifying labels. Afterwards it also
       provided a probability of each tweet being labeled as the above six categories. Below is a summary of this actual model:
     </p>
     <img class="col-md-11 text-header text-center"  style = "width: 55%; margin-bottom: 1%; margin-left: 25%;" src="static/css/model_details.png" alt="actual_model">
     
-    <p class="col-md-8 text-header text-left" style = "margin-bottom: 1%; margin-left: 20%;">
-    After training both our models achieved accuracy levels above 90%.
+    <p class="col-md-8 text-header text-left" style = "color: rgba(255, 255, 255, 0.795); margin-bottom: 1%; margin-left: 20%;">
+    After training model1 achieved an accuracy of 84% in its identification of the positivity/negativity of new text,
+    and model2 achieved an accuracy of 98%.
     </p>
 
 

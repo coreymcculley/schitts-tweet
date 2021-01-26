@@ -40,9 +40,9 @@
   </body>
 
   <body>
-    <h1 class="col-md-11 text-header text-center" style="margin-bottom: 5%">Test out a tweet to see its sentiment score or search for your favorite user's latest tweets!</h1>
+    <h1 class="col-md-11 text-header text-center" style="color: rgba(255, 255, 255, 0.795); margin-bottom: 5%">Test out a tweet's text to see its sentiment and vulgarity score or search for your favorite user's latest tweets!</h1>
 
-    <h2 class="col-md-11 text-header text-center">Enter your tweet text!</h2>
+    <h2 class="col-md-11 text-header text-center" style="color: #1DA1F2;">Enter your tweet text!</h2>
     <form class="form-horizontal" method="POST" action="/pred_model1">
       <div class="form-group">
         <label class="control-label col-sm-2" style="color: #f1c616" for="tweet-text">Tweet Text:</label>
@@ -57,22 +57,27 @@
       </div>
 
 
-      <h3 id="modtext" class="col-sm-offset-1 col-md-10 text-center" style="color: white;"> "{{ text }}"</h3>
+      <h3 id="modtext" class="col-sm-offset-1 col-md-10 text-center" style="color: rgba(255, 255, 255, 0.795);"> "{{ text }}"</h3>
       <div id="modresults" class="col-sm-offset-4 col-md-3 text-right">
 
-        <h4 style="color: #f1c616; margin-bottom: 2%;">Negativity score = {{ result_mod1 }}%</h4>
-        <h4 style="color: #f1c616; margin-bottom: 2%;">Toxicity score = {{ result_mod2_toxic }}%</h4>
-        <h4 style="color: #f1c616; margin-bottom: 2%;">Severe Toxicity score = {{ result_mod2_sevtoxic }}%</h4>
-        <h4 style="color: #f1c616; margin-bottom: 2%;">Obscene score = {{ result_mod2_obscene }}%</h4>
-        <h4 style="color: #f1c616; margin-bottom: 2%;">Threat score = {{ result_mod2_threat }}%</h4>
-        <h4 style="color: #f1c616; margin-bottom: 2%;">Insult score = {{ result_mod2_insult }}%</h4>
-        <h4 style="color: #f1c616; margin-bottom: 2%;">Hate Speech score = {{ result_mod2_hate }}%</h4>
+        <h3 style="color: white; margin-bottom: 2%;"><strong>MODEL 1</strong></h3>
+        <h4 style="color: #f1c616; margin-bottom: 2%;">Sentiment score = {{ result_mod1 }}%</h4>
+        <h5 style="color: rgba(255, 255, 255, 0.795); margin-bottom: 2%;">(0 = Negative, 50% = Neutral, 100% = Positive)</h5>
+
+        <h3 style="color: white; margin-bottom: 2%;"><strong>MODEL 2</strong></h3>
+        <h4 style="color: #f1c616; margin-bottom: 2%;">Toxicity = {{ result_mod2_toxic }}%</h4>
+        <h4 style="color: #f1c616; margin-bottom: 2%;">Severe Toxicity = {{ result_mod2_sevtoxic }}%</h4>
+        <h4 style="color: #f1c616; margin-bottom: 2%;">Obscenity = {{ result_mod2_obscene }}%</h4>
+        <h4 style="color: #f1c616; margin-bottom: 2%;">Threating = {{ result_mod2_threat }}%</h4>
+        <h4 style="color: #f1c616; margin-bottom: 2%;">Insulting = {{ result_mod2_insult }}%</h4>
+        <h4 style="color: #f1c616; margin-bottom: 2%;">Hate Speech = {{ result_mod2_hate }}%</h4> 
+        <h5 style="color: rgba(255, 255, 255, 0.795); margin-bottom: 2%;">(Higher values indicate a higher probability)</h5>
 
       </div>
 
     </form>
 
-    <h2 class="col-md-11 text-header text-center">Enter your twitter handle to collect their latest 10 tweets!</h2>
+    <h2 class="col-md-11 text-header text-center" style="color: #1DA1F2;">Enter your twitter handle to collect their latest 10 tweets!</h2>
     <form class="form-horizontal" method="POST" action="\">
       <div class="form-group">
         <label class="control-label col-sm-2" style="color:#f1c616" for="twitter-handle">@</label>

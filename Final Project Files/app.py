@@ -19,19 +19,19 @@ app = Flask(__name__)
 @app.route("/index.html")
 def homepage():
     return render_template("index.html")
-
+# Route to explore.html
 @app.route('/explore.html', methods=['GET', 'POST'])
 def explore():
     if request.method == 'POST':
         return redirect(url_for('index.html'))
     return render_template('explore.html')
-
+# Route to model.html
 @app.route('/model.html', methods=['GET', 'POST'])
 def modelpage():
     if request.method == 'POST':
         return redirect(url_for('index.html'))
     return render_template('model.html')
-
+# Route to created_by.html
 @app.route('/created_by.html', methods=['GET', 'POST'])
 def created_by():
     if request.method == 'POST':
@@ -84,8 +84,15 @@ def username_tweets(username,count):
         # Add or remove columns as you remove tweet information
         tweets_df = pd.DataFrame(tweets_list,columns=['Username', 'Datetime', 'Tweet Id', 'Text'])
         
-        # tweets_df['Negativity'] = model1.predict(pad_sequences(tokens1.texts_to_sequences(df[["toxic"]]), maxlen=60))
-        
+        # text = tweets_df['Text']
+        # length = len(text)
+        # for i in length:
+        #     df['Negativity'][i] = model1.predict(pad_sequences(tokens1.texts_to_sequences(text[i]), maxlen=60))
+        # negativity = model1.predict(pad_sequences(tokens1.texts_to_sequences("text"), maxlen=60))
+        # df = []
+        # df = model2.predict(sequence.pad_sequences(tokens2.texts_to_sequences([text]), maxlen=150))
+        # html_tab1 = df.to_html()
+
 
         html_tab = tweets_df.to_html()
         
@@ -106,6 +113,7 @@ def tweet_table():
         count = 10
         username = request.form["tweeter-handle"]
         tab = username_tweets(username,count)
+
         return render_template('index.html', table=tab)
         
 
@@ -117,7 +125,7 @@ def tweet_table():
 def pred_model1():
     if request.method == 'POST':
         text = request.form["tweet-text"]
-        score1 = str(100-np.round(100*model1.predict(pad_sequences(tokens1.texts_to_sequences([text]), maxlen=60)),2))
+        score1 = str(np.round(100*model1.predict(pad_sequences(tokens1.texts_to_sequences([text]), maxlen=60)),2))
         score1 = score1[2:6]
 
         pred_text = model2.predict(sequence.pad_sequences(tokens2.texts_to_sequences([text]), maxlen=150))
