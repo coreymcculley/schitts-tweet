@@ -45,19 +45,19 @@ def models_load():
     global model1
     global tokens2
     global model2
-    with open('../model/tokenizer1.pickle', 'rb') as f1:
+    with open('model/tokenizer1.pickle', 'rb') as f1:
         tokens1 = pickle.load(f1)
         print("Tokenizer1 loaded")
 
-    model1 = load_model('../model/model1.h5')
+    model1 = load_model('model/model1.h5')
     #model1.summary()
     print("Model1 loaded")
     
-    with open('../model/tokenizer2.pickle', 'rb') as f2:
+    with open('model/tokenizer2.pickle', 'rb') as f2:
         tokens2 = pickle.load(f2)
         print("Tokenizer2 loaded")
 
-    model2 = load_model('../model/model2.h5')
+    model2 = load_model('model/model2.h5')
     #model2.summary()
     print("Model2 loaded")
 
