@@ -156,7 +156,7 @@ def pred_model1():
                                 result_mod2_obscene=score_obscene,
                                 result_mod2_threat=score_threat,
                                 result_mod2_insult=score_insult,
-                                result_mod2_hate=score_insult)
+                                result_mod2_hate=score_hate)
     
     return render_template('index.html')
 
