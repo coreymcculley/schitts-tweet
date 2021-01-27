@@ -47,4 +47,6 @@ Model2 - Bidirectional NLP with convolution model that can perform vulgarity ana
 As soon as both models are built, trained and tested, it's time to visualize their practical application and final results. In order of doing that we've built a Web application using Flask, Twitter API, Tableau, HTML and JS. Current functionality includes (but not limited to) scrapping Twitter by user name and displaying a table of the latest 10 tweets. Text entry field to type in or paste any tweet for analysis. Model prediction output provides numerical scores both for sentiment and toxicity categories. Another type of available analysis is a Tableau dashboard displaying sentiment and toxicity analysis for a number of Tweeter users.
 Sentiment and toxicity analysis allows organizations to identify public relations towards certain words or topics. Influencer can gain assurance that their tweets are positive. Social media marketing analysis and gain insights on social media mentions.
 
+[Tableau Dashboard](https://public.tableau.com/profile/christy.patrick#!/vizhome/Twitter_Sentiment_Analysis/TweetsbyUser?publish=yes)
+
 
